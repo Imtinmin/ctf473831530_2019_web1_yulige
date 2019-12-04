@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
     python3  iputils-ping net-tools curl netcat-traditional \
     python3-pip
 
-RUN pip3 install flask
+RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip --upgrade
+RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple flask
 RUN echo "export HINT='mysql_user_is_yuligeeee123321'" >> /etc/profile
 WORKDIR /var/www/yuligeeeeeee/
 ADD ./app.py /var/www/yuligeeeeeee/
